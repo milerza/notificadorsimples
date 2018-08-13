@@ -5,25 +5,33 @@
 ======================== */
 
 var config = {
-    apiKey: "AIzaSyBl9KWZ0hW-rTumxtx-SSb0Vv6aEV3mFTw",
-    authDomain: "notificacoes-felipe.firebaseapp.com",
-    databaseURL: "https://notificacoes-felipe.firebaseio.com",
-    projectId: "notificacoes-felipe",
-    storageBucket: "notificacoes-felipe.appspot.com",
-    messagingSenderId: "510362805881"
+    apiKey: "AIzaSyA6gjh3d_Fv5moAHbgpCElccrFWY0-9w4M",
+    authDomain: "aulanotificacao-a48c4.firebaseapp.com",
+    databaseURL: "https://aulanotificacao-a48c4.firebaseio.com",
+    projectId: "aulanotificacao-a48c4",
+    storageBucket: "aulanotificacao-a48c4.appspot.com",
+    messagingSenderId: "374454005682"
   };
-  firebase.initializeApp(config);
+firebase.initializeApp(config);
 
 /* ========================
     Variáveis
 ======================== */
+const FIREBASE_AUTH = firebase.auth();
+const BTN_LOGAR = document.getElementById('logar');
 
 /* ========================
     Eventos
 ======================== */
+BTN_LOGAR.addEventListener('click',logar);
 
 /* ========================
     Funções 
 ======================== */
-    
+function logar(){
+    FIREBASE_AUTH.signInWithPopup( 
+        new firebase.auth.GoogleAuthProvider()
+    )
+}
+
 }
